@@ -1,0 +1,519 @@
+.loader {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.loader h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 60px;
+}
+.loadBox {
+  position: relative;
+  width: 30%;
+  height: 5px;
+  background-color: hsl(0deg, 0%, 95%);
+  overflow: hidden;
+}
+.loaderCon {
+  position: relative;
+  width: 50%;
+  height: 5px;
+  background-color: black;
+  animation: fa 1s linear infinite;
+}
+@keyframes fa {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+header {
+  isolation: isolate;
+  position: fixed;
+  padding: 10px;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #dfdfdf96;
+  z-index: 1;
+}
+.logo {
+  height: 50px;
+  width: 50px;
+}
+.logoTitle {
+  font-family: "Montserrat", sans-serif;
+}
+.ctaBut,
+.ctaButb {
+  position: relative;
+  padding: 12px 10px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+.ctaBut::before {
+  content: " ";
+  position: absolute;
+  left: -120px;
+  top: 0px;
+  border-radius: px;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  transition: 1s;
+  pointer-events: none;
+}
+.ctaBut:hover::before {
+  left: 120px;
+  color: black;
+}
+.ctaBut:active {
+  transform: scale(0.96);
+}
+.alink {
+  z-index: 1;
+  color: white;
+  text-decoration: none;
+  mix-blend-mode: difference;
+}
+
+.HeroSection {
+  isolation: isolate;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.heroPera {
+  text-align: center;
+}
+.heroPerb {
+  text-align: center;
+  width: 70%;
+}
+.heroBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.heroTag {
+  padding: 12px 10px;
+  border-radius: 20px;
+  background-color: hsl(0deg, 0%, 90%);
+  color: black;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+.ctaButb {
+  background-color: rgba(225, 225, 225, 0.3);
+  width: 120px;
+  color: black;
+  border: 2px solid hsl(0deg, 0%, 90%);
+  text-decoration: none;
+}
+.ctaButb:active {
+  transform: scale(0.96);
+}
+.ctaButb:hover {
+  transform: translateY(-2px);
+}
+.AboutSection {
+  position: relative;
+  padding: 10px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.aboutcona {
+  position: relative;
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.aboutconb {
+  position: relative;
+  width: 50%;
+  height: 50vh;
+  background-image: url("/aboutImg.jpg");
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.minaboutbox {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  height: 100%;
+  width: 55%;
+  display: flex;
+  align-items: end;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+}
+.wrapBox {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.aboutconbpe {
+  padding: 8px;
+  color: white;
+  border-radius: 20px;
+  white-space: none;
+  border: 1px solid #dfdfdf;
+}
+.estimatecostContainer {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+.estContainer {
+  position: relative;
+  padding: 10px;
+  background-color: hsl(0deg, 0%, 100%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+
+  color: black;
+
+  border-radius: 10px;
+  width: 100%;
+}
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.xform {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.inputBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputField {
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  border: 2px solid hsl(0deg, 0%, 80%);
+  outline: none;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  color: black;
+}
+.inputField::placeholder {
+  color: black;
+}
+.subBut {
+  padding: 10px 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  border: none;
+  background: black;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.subBut:hover {
+  background-color: transparent;
+  color: black;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.3);
+}
+.subBut:active {
+  transform: scale(0.96);
+}
+.estimateResult {
+  padding: 10px 10px;
+  border-radius: 20px;
+  background-color: hsl(0deg, 0%, 80%);
+  color: black;
+}
+.predictContainer {
+  position: relative;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(145deg, #060606 89%, #4f319a 53%);
+  border-radius: 10px;
+  color: white;
+}
+.minpredictContainer {
+  padding: 10px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.allcoteBut {
+  padding: 10px 10px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  width: max-content;
+  text-decoration: none;
+  transition: 1s;
+}
+.allcoteBut:hover {
+  background-color: rgba(225, 225, 225, 0.1);
+  color: white;
+}
+.allcoteBut:active {
+  scale: 0.92;
+}
+.problemContainer {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scrollSection {
+  height: 300vh;
+  view-timeline-name: --section-scroll;
+}
+.stickyWrapper {
+  position: sticky;
+  top: 15%;
+  height: 319px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.scrollProblemContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 0vw;
+  padding-right: 5vw;
+  width: max-content;
+  will-change: transform;
+  animation: move-left linear both;
+  animation-timeline: --section-scroll;
+  animation-range: contain 0% contain 100%;
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
+.problemBox {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  margin: 0;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+  cursor: pointer;
+}
+.problemBox:hover {
+  background-color: black;
+  color: white;
+}
+.problemImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.problemTitle {
+  font-weight: 600;
+  font-size: 18px;
+}
+.otherContainer {
+  position: relative;
+  height: 100vh;
+}
+.featureContainer {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.featureBox {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  transition: 1s;
+}
+
+.featureboxa {
+  padding: 15px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+  cursor: pointer;
+}
+.featureboxa:hover {
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.featureTitle {
+  font-weight: 600;
+  font-size: 18px;
+}
+footer {
+  position: relative;
+  padding: 10px 10px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+}
+footer p {
+  text-align: center;
+}
+/* Left side of About slides in from the left */
+.aboutcona {
+  animation: zoomIn linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+/* Right side of About (image) slides in from the right */
+.aboutconb {
+  animation: zoomIn linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+/* Cost container fades upward */
+.estContainer {
+  animation: fadeUp linear both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 25%;
+}
+
+/* Predict container zooms in for emphasis */
+.predictContainer {
+  animation: zoomIn linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+/* Fade and Slide Up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom and Fade In */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (max-width: 977px) {
+  .estimatecostContainer {
+    flex-direction: column;
+  }
+  .predictContainer {
+    width: 100%;
+  }
+}
+@media (max-width: 717px) {
+  .AboutSection {
+    flex-direction: column;
+  }
+  .aboutcona,
+  .aboutconb {
+    width: 100%;
+  }
+}
