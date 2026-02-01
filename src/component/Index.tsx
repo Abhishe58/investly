@@ -1,13 +1,13 @@
 import "./Index.css";
 import Logo from "../assets/logo.jpeg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handlelogin = async (e) => {
+  const handlelogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
