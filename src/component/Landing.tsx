@@ -45,11 +45,22 @@ export default function Landing() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const handleLoad = () => {
       setLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
+    };
+
+    // If page already loaded (important!)
+    if (document.readyState === "complete") {
+      setLoading(false);
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
+
   return (
     <>
       <AnimatePresence mode="wait">
