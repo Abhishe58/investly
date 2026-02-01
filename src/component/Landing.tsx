@@ -9,7 +9,7 @@ export default function Landing() {
   const [frequency, setFrequency] = useState("1");
   const [result, setResult] = useState("");
 
-  const calestimate = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const calestimate = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const P = parseFloat(amount);
