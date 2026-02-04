@@ -61,6 +61,11 @@ export default function Landing() {
     };
   }, []);
 
+  const getStarted = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    alert("Our team is working on it. Please stay tuned.");
+  };
+
   return (
     <>
       <AnimatePresence mode="wait">
@@ -97,7 +102,7 @@ export default function Landing() {
               </div>
 
               <div className="ctaBut">
-                <a href="" className="alink">
+                <a href="" className="alink" onClick={getStarted}>
                   Get Started
                 </a>
               </div>
@@ -192,7 +197,7 @@ export default function Landing() {
                 animate="show"
               >
                 <motion.div className="ctaBut" variants={itemVariants}>
-                  <a href="" className="alink">
+                  <a href="" className="alink" onClick={getStarted}>
                     Get Started
                   </a>
                 </motion.div>
