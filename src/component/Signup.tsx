@@ -6,23 +6,23 @@ import { useState } from "react";
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const navigate = useNavigate();
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:2000/signup", {
+      const res = await fetch("http://127.0.0.1:3000/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
       });
       const data = await res.json();
       if (!res.ok) {
         alert(data.message || "Signup failed");
       } else {
-        alert(data.message);
-        navigate("/");
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);
@@ -31,48 +31,88 @@ export default function Signup() {
 
   return (
     <>
+      <header>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          <img src={Logo} alt="Investly" className="headerLogo" />
+          <h1 className="logoTitle">Investly</h1>
+        </div>
+
+        <div className="headerBox">
+          <Link to="/login" className="logButx" style={{ color: "white" }}>
+            Login
+          </Link>
+
+          <Link to="/signup" className="logButxb">
+            Signup
+          </Link>
+        </div>
+      </header>
       <div className="index">
         <div className="container">
           <div className="boxa">
-            <div className="minheader">
-              <img src={Logo} alt="" className="logo" />
-              <h1>INVESTLY</h1>
-            </div>
             <div className="minBoxa">
-              <h1>Sign Up</h1>
-              <p>Welcome Back!</p>
-              <form onSubmit={handleSignup}>
+              <h1>Signup</h1>
+              <form onSubmit={handleSignup} className="loginForm">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Name"
+                  className="loginputField"
+                  required
+                />
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
-                  name=""
-                  id=""
+                  name="email"
+                  id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
-                  className="inputField"
+                  className="loginputField"
                   required
                 />
+                <label htmlFor="password">Password</label>
                 <input
                   type="password"
                   placeholder="Password"
-                  name=""
-                  id=""
+                  name="password"
+                  id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="inputField"
+                  className="loginputField"
                   required
                 />
                 <a>forget password?</a>
                 <button type="submit" className="logBut">
-                  Sign Up
+                  Signup
                 </button>
               </form>
             </div>
           </div>
           <div className="boxb">
-            <Link to="/" className="SignupBut">
-              Log In
-            </Link>
+            <div className="contentContainer">
+              <h1>Start Your Financial Journey</h1>
+              <h2>
+                Join thousands making smarter, data-driven decisions today.
+              </h2>
+              <p>
+                Create your free account to unlock unbiased investment plans
+                tailored specifically to your budget. It only takes a minute to
+                set your goals and receive a clear, personalized roadmap for
+                your wealth.
+              </p>
+            </div>
           </div>
         </div>
       </div>

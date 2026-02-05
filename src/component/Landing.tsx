@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Landing.css";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   const [amount, setAmount] = useState("");
@@ -102,9 +103,9 @@ export default function Landing() {
               </div>
 
               <div className="ctaBut">
-                <a href="" className="alink" onClick={getStarted}>
+                <Link to="/login" className="alink">
                   Get Started
-                </a>
+                </Link>
               </div>
             </motion.header>
             <section className="HeroSection">
@@ -238,7 +239,7 @@ export default function Landing() {
             <section className="estimatecostContainer" id="tryit">
               <div className="estContainer">
                 <h1>Visualize Your Future Wealth</h1>
-                <form onSubmit={calestimate}>
+                <form onSubmit={calestimate} className="landForm">
                   <div className="xform">
                     <div className="inputBox">
                       <label htmlFor="amount">Investment Amount (₹)</label>

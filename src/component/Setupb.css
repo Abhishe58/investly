@@ -1,0 +1,72 @@
+main {
+  position: relative;
+  padding: 10px;
+  padding-top: 70px;
+}
+.itemContainer {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.itemBox {
+  position: relative;
+  padding: 10px 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-radius: 10px;
+  transition: 1s;
+}
+.itemBox:hover {
+  background-color: black;
+  color: white;
+}
+.itemName {
+  font-size: 20px;
+}
+.pNumber {
+  font-size: 25px;
+  margin-top: 10px;
+}
+.bContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.listContainer,
+.summaryBox {
+  position: relative;
+  padding: 10px 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: 1s;
+}
+.listContainer:hover {
+  background-color: black;
+  color: white;
+}
+.summaryBox:hover {
+  background-color: black;
+  color: white;
+}
+.liList {
+  list-style-type: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.summaryBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media (max-width: 500px) {
+  .itemContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+  }
+}
