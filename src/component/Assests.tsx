@@ -40,7 +40,7 @@ export default function Assests() {
     try {
       // 1️⃣ Predict
       const res = await axios.post(
-        "https://investly5.netlify.app/api/predict",
+        "https://investlybackend.onrender.com/api/predict",
         {
           ...form,
           investment_amount: Number(form.investment_amount),
@@ -51,15 +51,18 @@ export default function Assests() {
       setResult(res.data.allocation);
 
       // 2️⃣ Save to DB
-      await axios.post("https://investly5.netlify.app/api/save-allocation", {
-        userId: localStorage.getItem("userId"), // from login
-        investment_amount: Number(form.investment_amount),
-        age: Number(form.age),
-        risk_appetite: form.risk_appetite,
-        horizon_category: form.horizon_category,
-        investment_goal: form.investment_goal,
-        allocation: res.data.allocation,
-      });
+      await axios.post(
+        "https://investlybackend.onrender.com/api/save-allocation",
+        {
+          userId: localStorage.getItem("userId"), // from login
+          investment_amount: Number(form.investment_amount),
+          age: Number(form.age),
+          risk_appetite: form.risk_appetite,
+          horizon_category: form.horizon_category,
+          investment_goal: form.investment_goal,
+          allocation: res.data.allocation,
+        },
+      );
       navigate("/dashboard");
     } catch (err) {
       console.log(err);

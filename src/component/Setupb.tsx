@@ -37,7 +37,7 @@ export default function Setupb() {
     if (!userId) return;
 
     axios
-      .get(`https://investly5.netlify.app/api/allocations/${userId}`)
+      .get(`https://investlybackend.onrender.com/api/allocations/${userId}`)
       .then((res) => {
         setData(res.data.data);
       })

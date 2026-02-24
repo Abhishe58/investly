@@ -53,7 +53,7 @@ export default function Chatbot() {
     setInput("");
 
     try {
-      const res = await fetch("https://investly5.netlify.app/chat", {
+      const res = await fetch("https://investlybackend.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ input: userMessage }),

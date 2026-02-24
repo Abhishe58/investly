@@ -12,7 +12,7 @@ export default function Index() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://investly5.netlify.app/login", {
+      const res = await fetch("https://investlybackend.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
