@@ -152,10 +152,25 @@ main {
   position: relative;
   width: 30%;
 }
-@media (max-width: 500px) {
+@media (max-width: 805px) {
   .itemContainer {
     display: grid;
     grid-template-columns: auto auto;
     gap: 10px;
+  }
+  .listContainer {
+    flex-direction: column;
+  }
+  .minlistContainer,
+  .minlistContainerb {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .summaryContainer {
+    flex-direction: column;
+  }
+  .summaryBox {
+    margin-top: 0px;
   }
 }
