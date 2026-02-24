@@ -1,7 +1,25 @@
+.homeHeader {
+  position: relative;
+  padding: 10px;
+  min-height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #dfdfdf96;
+  z-index: 1;
+}
 main {
   position: relative;
   padding: 10px;
-  padding-top: 70px;
+}
+.mainContainera {
+  position: relative;
+  width: 100%;
 }
 .itemContainer {
   position: relative;
@@ -16,6 +34,7 @@ main {
   width: 100%;
   border-radius: 10px;
   transition: 1s;
+  cursor: pointer;
 }
 .itemBox:hover {
   background-color: black;
@@ -30,11 +49,83 @@ main {
 }
 .bContainer {
   position: relative;
-  display: flex;
+  display: flexbox;
   flex-wrap: wrap;
   gap: 10px;
 }
-.listContainer,
+.listContainer {
+  flex: 1 0 50%;
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  transition: 1s;
+}
+.minlistContainer {
+  position: relative;
+  padding: 1.2rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.ulList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.minlistContainer:hover {
+  background-color: royalblue;
+  color: white;
+}
+.summaryBox:hover {
+  background-color: royalblue;
+  color: white;
+}
+.liList {
+  list-style-type: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.chatbotxzBox {
+  position: relative;
+  padding: 1.2rem;
+  background-color: black;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chatbotxzBut {
+  position: relative;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+.minlistContainerb {
+  position: relative;
+  padding: 1.2rem;
+  display: block;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.summaryContainer {
+  flex: 1 0 50%;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
 .summaryBox {
   position: relative;
   padding: 10px 10px;
@@ -43,25 +134,23 @@ main {
   border-radius: 10px;
   margin-top: 10px;
   transition: 1s;
-}
-.listContainer:hover {
-  background-color: black;
-  color: white;
-}
-.summaryBox:hover {
-  background-color: black;
-  color: white;
-}
-.liList {
-  list-style-type: none;
-  font-size: 16px;
-  margin-top: 10px;
-}
-.summaryBox {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
+  background-color: royalblue;
+  color: white;
+}
+.ChatxContainer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.mainContainerb {
+  position: relative;
+  width: 30%;
 }
 @media (max-width: 500px) {
   .itemContainer {

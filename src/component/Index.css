@@ -1,8 +1,7 @@
-header {
-  isolation: isolate;
-  position: fixed;
+.loiginHeader {
+  position: relative;
   padding: 10px;
-  height: 65px;
+  min-height: 65px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -53,7 +52,6 @@ header {
 }
 .logButxb {
   background-color: rgba(225, 225, 225, 0.3);
-
   color: black;
   border: 2px solid hsl(0deg, 0%, 90%);
   text-decoration: none;
@@ -70,19 +68,20 @@ header {
 }
 .index {
   position: relative;
-  height: 100vh;
+  padding: 10px;
+  min-height: calc(100vh - 65px);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.container {
+.containerlog {
   position: relative;
-  height: 80vh;
+  min-height: 80vh;
   width: 80%;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 15px rgba(225, 225, 225, 0.5);
   padding: 10px;
   border: 2px solid white;
   display: flex;
@@ -151,8 +150,8 @@ form a {
 .logBut {
   padding: 10px 10px;
   font-size: 16px;
-  background-color: hsl(0deg, 0%, 90%);
-  color: black;
+  background-color: black;
+  color: white;
   border-radius: none;
   border-radius: 10px;
   border: none;
@@ -163,7 +162,10 @@ form a {
 }
 .logBut:hover {
   color: white;
-  background-color: black;
+  background-color: royalblue;
+}
+.logBut:active {
+  transform: scale(1.1);
 }
 .boxb {
   position: relative;
@@ -190,26 +192,32 @@ form a {
   flex-direction: column;
   gap: 15px;
 }
-@media (max-width: 655px) {
-  .container {
-    flex-direction: column;
-    height: max-content;
-    width: 90%;
+@media (max-width: 771px) {
+  .containerlog {
+    flex-direction: column-reverse;
   }
-
   .boxa {
     width: 100%;
   }
   .boxb {
     width: 100%;
   }
-  .SignupBut {
-    bottom: 0;
-  }
-  form {
-    width: 100%;
-  }
   .contentContainer {
     border-radius: 10px;
+  }
+}
+@media (max-width: 470px) {
+  .headerBox {
+    width: 100%;
+  }
+  .logButx,
+  .logButxb {
+    width: 100%;
+  }
+  .index {
+    display: block;
+  }
+  .containerlog {
+    width: 100%;
   }
 }

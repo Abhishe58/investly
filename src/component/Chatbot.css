@@ -1,0 +1,113 @@
+.chatWorld {
+  position: relative;
+  padding: 1.2rem;
+  height: 100vh;
+  width: 100%;
+  border-radius: 10px;
+  background: transparent;
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+.responseContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+.responseContainer::-webkit-scrollbar {
+  display: none;
+}
+.chatCon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.userChatBox {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.userChat {
+  padding: 1.2rem;
+  background-color: royalblue;
+  border-radius: 10px;
+  max-width: 50%;
+  width: max-content;
+  color: white;
+}
+.chatResponse {
+  padding: 1.2rem;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  max-width: 80%;
+  width: max-content;
+}
+.chatbotForm {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.chatInput {
+  padding: 1rem;
+  width: 100%;
+  font-size: 16px;
+  background-color: hsl(0deg, 0%, 90%);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+.chatBut {
+  padding: 8px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 80px;
+}
+.ytLink {
+  color: royalblue;
+}
+.activeChatbot {
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: max-content;
+  text-align: end;
+}
+.inputContainerjj {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.suggestContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll;
+}
+.suggestContainer::-webkit-scrollbar {
+  display: none;
+}
+.suggestInput {
+  padding: 10px;
+  background-color: hsl(0deg, 0%, 90%);
+  border-radius: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 1s;
+}
+.suggestInput:hover {
+  background-color: royalblue;
+  color: white;
+}

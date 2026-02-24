@@ -34,7 +34,7 @@
     left: 100%;
   }
 }
-header {
+.landingheader {
   isolation: isolate;
   position: fixed;
   padding: 10px;
@@ -57,7 +57,7 @@ header {
   font-family: "Montserrat", sans-serif;
 }
 .ctaBut,
-.ctaButb {
+.ctaButx {
   position: relative;
   padding: 12px 10px;
   border-radius: 20px;
@@ -68,24 +68,13 @@ header {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
-  overflow: hidden;
-}
-.ctaBut::before {
-  content: " ";
-  position: absolute;
-  left: -120px;
-  top: 0px;
-  border-radius: px;
-  height: 100%;
-  width: 100%;
-  background-color: white;
   transition: 1s;
-  pointer-events: none;
 }
-.ctaBut:hover::before {
-  left: 120px;
-  color: black;
+.ctaBut:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+.ctaButx:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
 }
 .ctaBut:active {
   transform: scale(0.96);
@@ -134,18 +123,15 @@ header {
   cursor: pointer;
   font-size: 14px;
 }
-.ctaButb {
+.ctaButx {
   background-color: rgba(225, 225, 225, 0.3);
   width: 120px;
   color: black;
   border: 2px solid hsl(0deg, 0%, 90%);
   text-decoration: none;
 }
-.ctaButb:active {
+.ctaButx:active {
   transform: scale(0.96);
-}
-.ctaButb:hover {
-  transform: translateY(-2px);
 }
 .btn {
   color: white;
@@ -187,6 +173,8 @@ header {
   align-items: end;
   background-color: transparent;
   backdrop-filter: blur(20px);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .wrapBox {
   position: relative;
@@ -196,10 +184,15 @@ header {
 }
 .aboutconbpe {
   padding: 8px;
-  color: white;
   border-radius: 20px;
   white-space: none;
-  border: 1px solid #dfdfdf;
+  border: 2px solid #dfdfdf;
+  cursor: pointer;
+  transition: 1s;
+}
+.aboutconbpe:hover {
+  background-color: royalblue;
+  color: white;
 }
 .estimatecostContainer {
   position: relative;

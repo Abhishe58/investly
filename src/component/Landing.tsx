@@ -62,11 +62,6 @@ export default function Landing() {
     };
   }, []);
 
-  const getStarted = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    alert("Our team is working on it. Please stay tuned.");
-  };
-
   return (
     <>
       <AnimatePresence mode="wait">
@@ -86,6 +81,7 @@ export default function Landing() {
         ) : (
           <div>
             <motion.header
+              className="landingheader"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -198,13 +194,13 @@ export default function Landing() {
                 animate="show"
               >
                 <motion.div className="ctaBut" variants={itemVariants}>
-                  <a href="" className="alink" onClick={getStarted}>
+                  <Link to="/login" className="alink">
                     Get Started
-                  </a>
+                  </Link>
                 </motion.div>
                 <motion.a
                   href="#tryit"
-                  className="ctaButb"
+                  className="ctaButx"
                   variants={itemVariants}
                 >
                   Try it
@@ -213,7 +209,9 @@ export default function Landing() {
             </section>
             <section className="AboutSection">
               <div className="aboutcona">
-                <h1>Our Mission: Clarity in a Crowded Market</h1>
+                <h1 style={{ textAlign: "left" }}>
+                  Our Mission: Clarity in a Crowded Market
+                </h1>
                 <p>
                   At Investly, we believe investing shouldn’t be a guessing
                   game. We were built to solve the "analysis paralysis" that
@@ -224,16 +222,15 @@ export default function Landing() {
                   clarity. Our goal is simple: to transform your financial
                   dreams into a concrete, actionable roadmap you can trust.
                 </p>
+                <div className="wrapBox">
+                  <p className="aboutconbpe">Zero Confusion</p>
+                  <p className="aboutconbpe">Smart Suggestions</p>
+                  <p className="aboutconbpe">Beginner Friendly</p>
+                  <p className="aboutconbpe">Goal-Based Plans</p>
+                </div>
               </div>
               <div className="aboutconb">
-                <div className="minaboutbox">
-                  <div className="wrapBox">
-                    <p className="aboutconbpe">Zero Confusion</p>
-                    <p className="aboutconbpe">Smart Suggestions</p>
-                    <p className="aboutconbpe">Beginner Friendly</p>
-                    <p className="aboutconbpe">Goal-Based Plans</p>
-                  </div>
-                </div>
+                <div className="minaboutbox"></div>
               </div>
             </section>
             <section className="estimatecostContainer" id="tryit">
@@ -425,6 +422,16 @@ export default function Landing() {
                 </div>
               </div>
             </section>
+            <h2
+              style={{
+                textAlign: "center",
+                marginTop: "10px",
+                padding: "10px",
+              }}
+            >
+              We are not current SEBI Registered. Please consult your Financial
+              Advisor.
+            </h2>
             <footer>
               <p>© 2025 Investly. All rights reserved.</p>
               <p>

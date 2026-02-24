@@ -13,7 +13,7 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:3000/signup", {
+      const res = await fetch("https://investly5.netlify.app/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
@@ -31,7 +31,7 @@ export default function Signup() {
 
   return (
     <>
-      <header>
+      <header className="loiginHeader">
         <div
           style={{
             position: "relative",
@@ -55,7 +55,7 @@ export default function Signup() {
         </div>
       </header>
       <div className="index">
-        <div className="container">
+        <div className="containerlog">
           <div className="boxa">
             <div className="minBoxa">
               <h1>Signup</h1>

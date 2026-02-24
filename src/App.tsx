@@ -5,6 +5,7 @@ import Index from "./component/Index";
 import Signup from "./component/Signup";
 import Landing from "./component/Landing";
 import Setupb from "./component/Setupb";
+import Chatbot from "./component/Chatbot";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           <Route path="/login" element={<Index />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/setup" element={<Assests />} />
-          <Route path="/fianl-setup" element={<Setupb />} />
+          <Route path="/dashboard" element={<Setupb />} />
+          <Route path="/chatbot" element={<Chatbot />} />
         </Routes>
       </Router>
       {/* <Landing />

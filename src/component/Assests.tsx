@@ -39,16 +39,19 @@ export default function Assests() {
 
     try {
       // 1️⃣ Predict
-      const res = await axios.post("http://localhost:3000/api/predict", {
-        ...form,
-        investment_amount: Number(form.investment_amount),
-        age: Number(form.age),
-      });
+      const res = await axios.post(
+        "https://investly5.netlify.app/api/predict",
+        {
+          ...form,
+          investment_amount: Number(form.investment_amount),
+          age: Number(form.age),
+        },
+      );
 
       setResult(res.data.allocation);
 
       // 2️⃣ Save to DB
-      await axios.post("http://localhost:3000/api/save-allocation", {
+      await axios.post("https://investly5.netlify.app/api/save-allocation", {
         userId: localStorage.getItem("userId"), // from login
         investment_amount: Number(form.investment_amount),
         age: Number(form.age),
@@ -57,9 +60,9 @@ export default function Assests() {
         investment_goal: form.investment_goal,
         allocation: res.data.allocation,
       });
-      navigate("/fianl-setup");
+      navigate("/dashboard");
     } catch (err) {
-      alert("Prediction failed");
+      console.log(err);
     } finally {
       setLoading(false);
     }
@@ -74,7 +77,7 @@ export default function Assests() {
 
   return (
     <div>
-      <header>
+      <header className="landingheader">
         <div
           style={{
             position: "relative",
@@ -106,6 +109,7 @@ export default function Assests() {
                 placeholder="Investment Amount"
                 value={form.investment_amount}
                 onChange={handleChange}
+                className="assestsInput"
                 required
               />
               <label htmlFor="age">Age</label>
@@ -115,6 +119,7 @@ export default function Assests() {
                 placeholder="Age"
                 value={form.age}
                 onChange={handleChange}
+                className="assestsInput"
                 required
               />
 
@@ -123,6 +128,7 @@ export default function Assests() {
                 name="risk_appetite"
                 value={form.risk_appetite}
                 onChange={handleChange}
+                className="assestsInput"
                 required
               >
                 <option value="" disabled>
@@ -137,6 +143,7 @@ export default function Assests() {
                 name="horizon_category"
                 value={form.horizon_category}
                 onChange={handleChange}
+                className="assestsInput"
                 required
               >
                 <option value="" disabled>
@@ -152,6 +159,7 @@ export default function Assests() {
                 name="investment_goal"
                 value={form.investment_goal}
                 onChange={handleChange}
+                className="assestsInput"
                 required
               >
                 <option value="" disabled>
@@ -163,7 +171,7 @@ export default function Assests() {
                 <option value="Retirement">Retirement</option>
               </select>
 
-              <button type="submit">
+              <button type="submit" className="assestsBut">
                 {loading ? "Predicting..." : "Get Allocation"}
               </button>
             </form>

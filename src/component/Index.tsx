@@ -12,7 +12,7 @@ export default function Index() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://127.0.0.1:3000/login", {
+      const res = await fetch("https://investly5.netlify.app/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -25,7 +25,11 @@ export default function Index() {
         localStorage.setItem("userEmail", data.email);
         localStorage.setItem("userName", data.name);
 
-        navigate("/setup");
+        if (data.isFirstTime) {
+          navigate("/setup");
+        } else {
+          navigate("/dashboard");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -33,7 +37,7 @@ export default function Index() {
   };
   return (
     <>
-      <header>
+      <header className="loiginHeader">
         <div
           style={{
             position: "relative",
@@ -57,7 +61,7 @@ export default function Index() {
         </div>
       </header>
       <div className="index">
-        <div className="container">
+        <div className="containerlog">
           <div className="boxa">
             <div className="minBoxa">
               <h1>Login</h1>
