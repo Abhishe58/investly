@@ -10,6 +10,8 @@ export default function Landing() {
   const [frequency, setFrequency] = useState("1");
   const [result, setResult] = useState("");
 
+  const MotionLink = motion(Link);
+
   const calestimate = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -98,11 +100,9 @@ export default function Landing() {
                 <h1 className="logoTitle">Investly</h1>
               </div>
 
-              <div className="ctaBut">
-                <Link to="/login" className="alink">
-                  Get Started
-                </Link>
-              </div>
+              <Link to="/login" className="ctaBut">
+                Get Started
+              </Link>
             </motion.header>
             <section className="HeroSection">
               <div className="heroBox">
@@ -193,11 +193,14 @@ export default function Landing() {
                 initial="hidden"
                 animate="show"
               >
-                <motion.div className="ctaBut" variants={itemVariants}>
-                  <Link to="/login" className="alink">
-                    Get Started
-                  </Link>
-                </motion.div>
+                <MotionLink
+                  to="/login"
+                  className="ctaBut"
+                  variants={itemVariants}
+                >
+                  Get Started
+                </MotionLink>
+
                 <motion.a
                   href="#tryit"
                   className="ctaButx"
@@ -229,9 +232,7 @@ export default function Landing() {
                   <p className="aboutconbpe">Goal-Based Plans</p>
                 </div>
               </div>
-              <div className="aboutconb">
-                <div className="minaboutbox"></div>
-              </div>
+              <div className="aboutconb"></div>
             </section>
             <section className="estimatecostContainer" id="tryit">
               <div className="estContainer">
